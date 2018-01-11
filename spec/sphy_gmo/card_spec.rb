@@ -41,7 +41,7 @@ describe SphyGmo::Card do
           default_flag: 1,
           seq_mode: SEQ_MODE
         )
-      end.to raise_error(KeyError)
+      end.to raise_error(KeyError, 'key not found: "EX1000301"')
     end
   end
 end
