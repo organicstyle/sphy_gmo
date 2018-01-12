@@ -18,11 +18,7 @@ describe SphyGmo::Card do
       member_id = @member_id
       member_name = "Foo Bar"
       SEQ_MODE = 0
-      SphyGmo::Member.save!(
-        member_id: member_id,
-        member_name: member_name,
-        seq_mode: SEQ_MODE
-      )
+      SphyGmo::Member.save!( member_id: member_id, member_name: member_name, seq_mode: SEQ_MODE )
       member = SphyGmo::Member.search!(member_id: member_id)
       expect(member["MemberName"]).to eq member_name
       expect(member["MemberID"]).to eq @member_id
@@ -34,13 +30,8 @@ describe SphyGmo::Card do
     it "gets data about a card" do
       expect do
         member_id = @member_id
-        token = '0000000000000000000000000000000000000000000000000000000000000000'
-        SphyGmo::Card.save!(
-          member_id: member_id,
-          token: token,
-          default_flag: 1,
-          seq_mode: SEQ_MODE
-        )
+        token = generate_token
+        SphyGmo::Card.save!( member_id: member_id, token: token, default_flag: 1, seq_mode: SEQ_MODE )
       end.to raise_error(KeyError, 'key not found: "EX1000301"')
     end
   end
