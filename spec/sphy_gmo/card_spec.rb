@@ -32,7 +32,7 @@ describe SphyGmo::Card do
         member_id = @member_id
         token = generate_token
         SphyGmo::Card.save!( member_id: member_id, token: token, default_flag: 1, seq_mode: SEQ_MODE )
-      end.to raise_error(KeyError, 'key not found: "EX1000301"')
+      end.to raise_error(SphyGmo::APIError, '決済処理に失敗しました。もう一度カード番号を入力してください。 指定されたサイトIDと会員IDの会員が存在しません。 有効期限が指定されていません。 カード番号が指定されていません。')
     end
   end
 end
