@@ -128,6 +128,28 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
 
+## Usage
+`https://github.com/takumiabe/sphy_gmo`
+
+## Test
+
+`$ bundle exec rspec spec`
+
+### 事前準備
+
+`config.example.yml`を適宜編集
+
+GMOペイメントゲートウェイのテスト環境の情報を入力
+
+```
+shop_id: ショップID
+shop_pass: ショップパスワード
+site_id: サイトID
+site_pass: サイトパスワード
+host: kt01.mul-pay.jp
+```
+
+
 ## Licencing
 
 This is provided on MIT Licence.
