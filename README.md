@@ -149,6 +149,10 @@ site_pass: サイトパスワード
 host: kt01.mul-pay.jp
 ```
 
+[サイトIDの確認方法](https://github.com/organicstyle/sphy_gmo/pull/2#issuecomment-357898305)
+
+[ショップIDの確認方法](https://github.com/organicstyle/sphy_gmo/pull/2#issuecomment-357898996)
+
 
 ## Licencing
 
