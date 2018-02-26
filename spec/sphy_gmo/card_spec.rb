@@ -1,4 +1,9 @@
 require 'spec_helper'
+require 'i18n'
+require 'yaml'
+
+I18n.backend.load_translations(Dir.glob('locales/ja.yml'))
+I18n.default_locale = :ja
 
 describe SphyGmo::Card do
   before do
@@ -28,11 +33,13 @@ describe SphyGmo::Card do
   #無効なトークンでは登録できないことを確認
   describe "#Card.save" do
     it "gets data about a card" do
+      error_code = I18n.t :token_error
       expect do
         member_id = @member_id
         token = generate_token
         SphyGmo::Card.save!( member_id: member_id, token: token, default_flag: 1, seq_mode: SEQ_MODE )
-      end.to raise_error(SphyGmo::APIError, '決済処理に失敗しました。もう一度カード番号を入力してください。 指定されたサイトIDと会員IDの会員が存在しません。 有効期限が指定されていません。 カード番号が指定されていません。')
+      end.to raise_error(SphyGmo::APIError, error_code)
     end
+
   end
 end
