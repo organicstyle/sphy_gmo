@@ -46,7 +46,7 @@ SphyGmo.configure do |config|
   config.site_id = ENV['GMO_SITE_ID']
   config.site_pass = ENV['GMO_SITE_PASS']
   config.shop_id = ENV['GMO_SHOP_ID']
-  config.shop_pass = ENV['GMO_SHOP_PASS]
+  config.shop_pass = ENV['GMO_SHOP_PASS']
 end
 ```
 
@@ -128,8 +128,6 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
 
-## Usage
-`https://github.com/takumiabe/sphy_gmo`
 
 ## Test
 
@@ -137,17 +135,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ### 事前準備
 
-`config.example.yml`を適宜編集
-
-GMOペイメントゲートウェイのテスト環境の情報を入力
-
-```
-shop_id: ショップID
-shop_pass: ショップパスワード
-site_id: サイトID
-site_pass: サイトパスワード
-host: kt01.mul-pay.jp
-```
+`.env`ファイルを適宜編集
 
 [サイトIDの確認方法](https://github.com/organicstyle/sphy_gmo/pull/2#issuecomment-357898305)
 

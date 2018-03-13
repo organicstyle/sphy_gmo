@@ -1,6 +1,5 @@
 require 'spec_helper'
 require 'i18n'
-require 'yaml'
 
 I18n.backend.load_translations(Dir.glob('locales/ja.yml'))
 I18n.default_locale = :ja
@@ -9,11 +8,11 @@ describe SphyGmo::Card do
   before do
     @member_id = generate_id.to_s
     SphyGmo.configure do |config|
-      config.host = SPEC_CONF["host"]
-      config.site_id = SPEC_CONF["site_id"]
-      config.site_pass = SPEC_CONF["site_pass"]
-      config.shop_id = SPEC_CONF["shop_id"]
-      config.shop_pass = SPEC_CONF["shop_pass"]
+      config.host = ENV['MANATSUKU_GMO_HOST']
+      config.site_id = ENV['MANATSUKU_GMO_SITE_ID']
+      config.site_pass = ENV['MANATSUKU_GMO_SITE_PASS']
+      config.shop_id = ENV['MANATSUKU_GMO_SHOP_ID']
+      config.shop_pass = ENV['MANATSUKU_GMO_SHOP_PASS']
     end
   end
 

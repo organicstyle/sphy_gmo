@@ -8,4 +8,4 @@
 /pkg/
 /spec/reports/
 /tmp/
-/spec/support/config.yml
+/.env
