@@ -46,7 +46,7 @@ SphyGmo.configure do |config|
   config.site_id = ENV['GMO_SITE_ID']
   config.site_pass = ENV['GMO_SITE_PASS']
   config.shop_id = ENV['GMO_SHOP_ID']
-  config.shop_pass = ENV['GMO_SHOP_PASS]
+  config.shop_pass = ENV['GMO_SHOP_PASS']
 end
 ```
 
@@ -127,6 +127,20 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+
+## Test
+
+`$ bundle exec rspec spec`
+
+### 事前準備
+
+`.env`ファイルを適宜編集
+
+[サイトIDの確認方法](https://github.com/organicstyle/sphy_gmo/pull/2#issuecomment-357898305)
+
+[ショップIDの確認方法](https://github.com/organicstyle/sphy_gmo/pull/2#issuecomment-357898996)
+
 
 ## Licencing
 
