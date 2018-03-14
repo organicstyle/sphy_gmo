@@ -24,8 +24,7 @@ describe SphyGmo::Card do
       SEQ_MODE = 0
       SphyGmo::Member.save!( member_id: member_id, member_name: member_name, seq_mode: SEQ_MODE )
       member = SphyGmo::Member.search!(member_id: member_id)
-      expect(member["MemberName"]).to eq member_name
-      expect(member["MemberID"]).to eq @member_id
+      expect(member).to include("MemberID" => @member_id, "MemberName" => member_name, "DeleteFlag" => "0")
     end
   end
 
